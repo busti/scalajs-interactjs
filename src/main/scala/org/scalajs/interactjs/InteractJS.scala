@@ -519,23 +519,6 @@ trait DraggableOptions extends ActionOptions with RestrictAble with InertiaAble 
     * After the movement in that axis, the the action can move in both the x and y axes.
     */
   var axis: UndefOr[String] = js.undefined
-
-  /**
-   * Called when a drag is started.
-   */
-  var dragstart: UndefOr[js.Function1[DragEvent, Unit]] = js.undefined
-
-  /**
-   * Called when the object is being dragged.
-   */
-  var dragmove: UndefOr[js.Function1[DragEvent, Unit]] = js.undefined
-
-  /**
-   * Called when a drag is finished.
-   */
-  var dragend: UndefOr[js.Function1[DragEvent, Unit]] = js.undefined
-
-  var draginertiastart: UndefOr[js.Function1[DragEvent, Unit]] = js.undefined
 }
 
 trait ResizeableOptions extends ActionOptions with RestrictAble with InertiaAble with AutoScrollAble {
@@ -566,42 +549,9 @@ trait ResizeableOptions extends ActionOptions with RestrictAble with InertiaAble
     * This doesn’t necessarily maintain the aspect ratio of the object.
     */
   var squareResize: UndefOr[Boolean] = js.undefined
-
-  /**
-   * Called when a drag is started.
-   */
-  var resizestart: UndefOr[js.Function1[ResizeEvent, Unit]] = js.undefined
-
-  /**
-   * Called when the object is being dragged.
-   */
-  var resizemove: UndefOr[js.Function1[ResizeEvent, Unit]] = js.undefined
-
-  /**
-   * Called when a drag is finished.
-   */
-  var resizeend: UndefOr[js.Function1[ResizeEvent, Unit]] = js.undefined
-
-  var resizeinertiastart: UndefOr[js.Function1[ResizeEvent, Unit]] = js.undefined
 }
 
-trait GesturableOptions extends ActionOptions with RestrictAble {
-  /**
-   * Called when a gesture is started.
-   */
-  var gesturestart: UndefOr[js.Function1[GestureEvent, Unit]] = js.undefined
-
-  /**
-   * Called when the object is being gestured...
-   * Fixme: Broken english
-   */
-  var gesturemove: UndefOr[js.Function1[GestureEvent, Unit]] = js.undefined
-
-  /**
-   * Called when a gesture is finished.
-   */
-  var gestureend: UndefOr[js.Function1[GestureEvent, Unit]] = js.undefined
-}
+trait GesturableOptions extends ActionOptions with RestrictAble
 
 trait DropzoneOptions extends ActionOptions {
 
