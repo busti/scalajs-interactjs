@@ -9,3 +9,5 @@ scalacOptions ++= Seq("-P:scalajs:sjsDefinedByDefault")
 libraryDependencies ++= Seq(
   "org.scala-js" %%% "scalajs-dom" % "0.9.2"
 )
+
+publishTo := sonatypePublishTo.value
