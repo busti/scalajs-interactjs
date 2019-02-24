@@ -1,9 +1,13 @@
 package org.scalajs
 
-import scala.scalajs.js
 import scala.language.implicitConversions
-import scala.scalajs.js.UndefOr
+import scala.scalajs.js
+import scala.scalajs.js.annotation.JSImport
 
 package object interactjs {
-  val interact: InteractJSStatic = js.Dynamic.global.interact.asInstanceOf[InteractJSStatic]
+  lazy val interact: InteractStatic = js.Dynamic.global.interact.asInstanceOf[InteractStatic]
+
+  @js.native
+  @JSImport("interact", JSImport.Namespace)
+  object InteractJsModule extends InteractStatic
 }
