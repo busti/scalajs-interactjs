@@ -601,6 +601,12 @@ trait Interactable extends js.Object {
   def on(names: js.Array[String], listener: js.Function1[PointerEvent, Unit]): Interactable = js.native
 
   def createSnapGrid(options: SnapGridOptions): SnapTargetGrid = js.native
+
+  /**
+   * To remove an Interactable, use interact(target).unset().
+   * That should remove all event listeners and make interact.js forget completely about the target.
+   */
+  def unset(): Unit = js.native
 }
 
 @js.native
