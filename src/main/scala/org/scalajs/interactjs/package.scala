@@ -5,9 +5,9 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
 package object interactjs {
-  lazy val interact: InteractStatic = js.Dynamic.global.interact.asInstanceOf[InteractStatic]
+  lazy val interact: InteractJSStatic = js.Dynamic.global.interact.asInstanceOf[InteractJSStatic]
 
   @js.native
   @JSImport("interact", JSImport.Namespace)
-  object InteractJsModule extends InteractStatic
+  object InteractJsModule extends InteractJSStatic
 }

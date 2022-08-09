@@ -12,7 +12,7 @@ sonatypeProjectHosting := Some(
     "Busti",
     "scalajs-interactjs",
     "Moritz Bust",
-    "mbust@live.de"
+    "oss@busti.cool"
   )
 )
 
@@ -26,5 +26,7 @@ scmInfo := Some(
 )
 
 developers := List(
-  Developer("Busti", "Moritz Bust", "mbust@live.de", url("https://github.com/busti"))
+  Developer("Busti", "Moritz Bust", "oss@busti.cool", url("https://github.com/busti"))
 )
+
+credentials += Credentials(Path.userHome / ".sbt" / "sonatype_credentials")

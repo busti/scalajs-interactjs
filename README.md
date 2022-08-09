@@ -7,7 +7,7 @@ A scala.js facade against the interact.js library.
 
 Add the library to your project:
 ```scala
-libraryDependencies += "com.github.busti" %%% "scalajs-interactjs" % "1.0"
+libraryDependencies += "com.github.busti" %%% "scalajs-interactjs" % "1.0.1"
 ```
 
 Add interact.js to your javascript dependencies:

@@ -5,7 +5,6 @@ import org.scalajs.dom._
 import scala.scalajs.js
 import js.{UndefOr, |}
 import scala.collection.mutable
-import scala.scalajs.js.annotation.ScalaJSDefined
 
 /**
   * The InteractEvent types are:

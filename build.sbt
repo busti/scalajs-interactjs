@@ -1,13 +1,11 @@
 enablePlugins(ScalaJSPlugin)
 
 name := "scalajs-interactjs"
-version := "1.0"
-scalaVersion := "2.12.6"
-
-scalacOptions ++= Seq("-P:scalajs:sjsDefinedByDefault")
+version := "1.0.1"
+scalaVersion := "2.13.8"
 
 libraryDependencies ++= Seq(
-  "org.scala-js" %%% "scalajs-dom" % "0.9.2"
+  "org.scala-js" %%% "scalajs-dom" % "1.1.0"
 )
 
 publishTo := sonatypePublishTo.value
