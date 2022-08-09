@@ -8,6 +8,6 @@ package object interactjs {
   lazy val interact: InteractJSStatic = js.Dynamic.global.interact.asInstanceOf[InteractJSStatic]
 
   @js.native
-  @JSImport("interact", JSImport.Namespace)
+  @JSImport("interactjs", JSImport.Namespace)
   object InteractJsModule extends InteractJSStatic
 }
