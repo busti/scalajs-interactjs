@@ -509,6 +509,22 @@ trait ActionOptions extends RestrictAble with InertiaAble {
    * Called when an interaction is finished.
    */
   var onend: UndefOr[js.Function1[InteractEvent, Unit]] = js.undefined
+
+  /**
+    * The allowFrom option lets you specify a target CSS selector or Element which must be
+    * the target of the pointer down event in order for the action to start.
+    * This option available for drag, resize and gesture, as well as pointerEvents (down, move, hold, etc.).
+    * Using the allowFrom option, you may specify handles for each action separately and for all your pointerEvents listeners.
+    */
+  var allowFrom: UndefOr[String] = js.undefined
+
+  /**
+    * The compliment to allowFrom, ignoreFrom lets you specify elements within your target with which to avoid starting actions.
+    * This is useful when certain elements need to maintain default behavior when interacted with.
+    * For example, dragging around a text/contentEditable, by wrapping this object with a draggable element
+    * and ignoring the editable content you maintain the ability to highlight text without moving the element.
+    */
+  var ignoreFrom: UndefOr[String] = js.undefined
 }
 
 trait DraggableOptions extends ActionOptions with RestrictAble with InertiaAble with AutoScrollAble {
