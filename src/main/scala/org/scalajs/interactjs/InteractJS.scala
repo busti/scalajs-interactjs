@@ -536,6 +536,13 @@ trait DraggableOptions extends ActionOptions with RestrictAble with InertiaAble 
   var axis: UndefOr[String] = js.undefined
 }
 
+trait ResizableEdgesOptions {
+  val top: js.UndefOr[Boolean]
+  val left: js.UndefOr[Boolean]
+  val bottom: js.UndefOr[Boolean]
+  val right: js.UndefOr[Boolean]
+}
+
 trait ResizeableOptions extends ActionOptions with RestrictAble with InertiaAble with AutoScrollAble {
 
   /**
@@ -549,7 +556,7 @@ trait ResizeableOptions extends ActionOptions with RestrictAble with InertiaAble
     * Resize handle elements must be children of the resizable element.
     * If you need the handles to be outside the target element, then you will need to use Interaction#start.
     */
-  var edges: UndefOr[RelativeRect] = js.undefined
+  var edges: UndefOr[ResizableEdgesOptions] = js.undefined
 
   /**
     * Choose what should happen if the target would be resized to dimensions less than 0x0. The possible values are:
