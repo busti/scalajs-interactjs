@@ -537,10 +537,10 @@ trait DraggableOptions extends ActionOptions with RestrictAble with InertiaAble 
 }
 
 trait ResizableEdgesOptions {
-  val top: js.UndefOr[Boolean]
-  val left: js.UndefOr[Boolean]
-  val bottom: js.UndefOr[Boolean]
-  val right: js.UndefOr[Boolean]
+  val top: js.UndefOr[Boolean] = js.undefined
+  val left: js.UndefOr[Boolean] = js.undefined
+  val bottom: js.UndefOr[Boolean] = js.undefined
+  val right: js.UndefOr[Boolean] = js.undefined
 }
 
 trait ResizeableOptions extends ActionOptions with RestrictAble with InertiaAble with AutoScrollAble {
