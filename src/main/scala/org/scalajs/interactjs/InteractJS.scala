@@ -537,13 +537,13 @@ trait DraggableOptions extends ActionOptions with RestrictAble with InertiaAble 
 }
 
 trait ResizableEdgesOptions {
-  val top: js.UndefOr[Boolean] = js.undefined
-  val left: js.UndefOr[Boolean] = js.undefined
-  val bottom: js.UndefOr[Boolean] = js.undefined
-  val right: js.UndefOr[Boolean] = js.undefined
+  val top: UndefOr[Boolean | String | Element] = js.undefined
+  val left: UndefOr[Boolean | String | Element] = js.undefined
+  val bottom: UndefOr[Boolean | String | Element] = js.undefined
+  val right: UndefOr[Boolean | String | Element] = js.undefined
 }
 
-trait ResizeableOptions extends ActionOptions with RestrictAble with InertiaAble with AutoScrollAble {
+trait ResizableOptions extends ActionOptions with RestrictAble with InertiaAble with AutoScrollAble {
 
   /**
     * If resize edges are used, resize events will have rect and deltaRect properties.
@@ -567,10 +567,13 @@ trait ResizeableOptions extends ActionOptions with RestrictAble with InertiaAble
   var invert: UndefOr[String] = js.undefined
 
   /**
-    * When resizing, change the width and height by the same amount.
-    * This doesn’t necessarily maintain the aspect ratio of the object.
+    * interact.js comes with an aspectRatio modifier which can be used to force the resized rect to maintain a certain aspect ratio. The modifier has 3 options:
+    * - ratio - number or ‘preserve’ - The aspect ratio to maintain or the value ‘preserve’ to maintain the starting ratio
+    * - equalDelta - boolean - Increase edges by the same amount instead of maintaining the same ratio
+    * - modifiers - array of modifiers - Modifiers to apply to the resize which will be made to respect the aspect ratio options
+    * To guarantee that the aspect ratio options are respected by other modifiers, those modifiers must be in the aspectRatio.modifiers array option, not in the same resize.modifiers array as the aspectRatio one.
     */
-  var squareResize: UndefOr[Boolean] = js.undefined
+  val ratio: UndefOr[Double] = js.undefined
 }
 
 trait GesturableOptions extends ActionOptions with RestrictAble
@@ -613,7 +616,7 @@ trait InteractJSOptions extends js.Object {
 trait Interactable extends js.Object {
   def draggable(options: DraggableOptions): Interactable = js.native
 
-  def resizeable(options: ResizeableOptions): Interactable = js.native
+  def resizable(options: ResizableOptions): Interactable = js.native
 
   def gesturable(options: GesturableOptions): Interactable = js.native
 
