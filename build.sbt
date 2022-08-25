@@ -1,7 +1,7 @@
 enablePlugins(ScalaJSPlugin)
 
 name := "scalajs-interactjs"
-version := "1.0.5"
+version := "1.1.0"
 scalaVersion := "2.13.8"
 
 libraryDependencies ++= Seq(
