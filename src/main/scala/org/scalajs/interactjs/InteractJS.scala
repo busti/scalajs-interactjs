@@ -536,7 +536,7 @@ trait DraggableOptions extends ActionOptions with RestrictAble with InertiaAble 
   var axis: UndefOr[String] = js.undefined
 }
 
-trait ResizableEdgesOptions {
+trait ResizableEdgesOptions extends js.Object {
   val top: UndefOr[Boolean | String | Element] = js.undefined
   val left: UndefOr[Boolean | String | Element] = js.undefined
   val bottom: UndefOr[Boolean | String | Element] = js.undefined
