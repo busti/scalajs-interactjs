@@ -1,11 +1,14 @@
 enablePlugins(ScalaJSPlugin)
 
+val scala2 = "2.13.12"
+val scala3 = "3.3.1"
+
 name := "scalajs-interactjs"
-version := "1.1.3"
-scalaVersion := "2.13.8"
+version := "1.1.4"
+crossScalaVersions := List(scala2, scala3)
 
 libraryDependencies ++= Seq(
-  "org.scala-js" %%% "scalajs-dom" % "2.2.0"
+  "org.scala-js" %%% "scalajs-dom" % "2.8.0"
 )
 
 publishTo := sonatypePublishTo.value
